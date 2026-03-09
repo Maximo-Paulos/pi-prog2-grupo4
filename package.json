@@ -1,0 +1,23 @@
+{
+  "name": "pi-prog2-grupo4",
+  "version": "1.0.0",
+  "description": "Npm grupo 2",
+  "homepage": "https://github.com/Maximo-Paulos/pi-prog2-grupo4#readme",
+  "bugs": {
+    "url": "https://github.com/Maximo-Paulos/pi-prog2-grupo4/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maximo-Paulos/pi-prog2-grupo4.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "moment": "^2.30.1"
+  }
+}
