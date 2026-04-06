@@ -86,7 +86,7 @@ Mediante lenguaje SQL deberán insertar al menos 5 usuarios, 10 productos y 3 co
 Los campos de las tablas deben coincidir con la información solicitada en cada formulario creado para el proyecto. Debe existir coherencia entre los campos pedidos en el formulario y los datos que almacena la tabla. Haceme un resumen del proyecto que tengo que hacer esto 
 
 
-
+sdfghj
 
 
 
