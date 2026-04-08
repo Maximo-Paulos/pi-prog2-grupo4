@@ -11,6 +11,7 @@ const userController = {
         const userData = require('../db/data').user; 
         res.render('profile', { user: userData });
     }
+
 };
 
 module.exports = userController;
