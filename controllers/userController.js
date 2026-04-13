@@ -1,5 +1,3 @@
-const users = require('users');
-
 const userController = {
     register: function (req, res)  {
         res.render('register');

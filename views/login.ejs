@@ -5,15 +5,15 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link width="" rel="shortcut icon" href="./images/logo-mercado-liebre.jpg" />
+	<link width="" rel="shortcut icon" href="/images/logo-mercado-liebre.jpg" />
 
 	<title> Mercado Liebre Argentina</title>
 	<!-- Font Awesome Stylesheet -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 	<!-- Bootstrap Grid Stylesheet -->
-	<link rel="stylesheet" href="./css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
 	<!-- Own Stylesheet -->
-	<link rel="stylesheet" href="./css/app.css">
+	<link rel="stylesheet" href="/stylesheets/app.css">
 </head>
 
 <body>
@@ -22,13 +22,13 @@
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-5 col-md-2">
-					<a href="index.ejs" class="main-header_home-link">
-						<img src="./images/logo-mercado-liebre.svg">
+					<a href="/" class="main-header_home-link">
+						<img src="/images/logo-mercado-liebre.svg">
 					</a>
 				</div>
 	
 				<div class="col-7 col-md-6">
-					<form action="search-results.html" method="GET" class="search-form">
+					<form action="/" method="GET" class="search-form">
 						<input type="text" name="search" placeholder="Buscar productos, marcas y más"
 							class="search-form_input">
 						<button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
@@ -49,12 +49,12 @@
 	
 			<nav class="main-navbar">
 				<ul class="left-navbar">
-					<li><a href="index.ejs">Todos los productos</a></li>
-					<li><a href="product-add.ejs">Cargar producto</a></li>
+					<li><a href="/">Todos los productos</a></li>
+					<li><a href="/products/add">Cargar producto</a></li>
 				</ul>
 				<ul class="right-navbar">
 					<li>
-						<a href="profile.ejs"> Nombre del usuario <i class="fas fa-user"></i></a>
+						<a href="/users"> Nombre del usuario <i class="fas fa-user"></i></a>
 					</li>
 					<li>
 						<form action="" method="post">
@@ -64,11 +64,11 @@
 						</form>
 					</li>
 					<li>
-						<a href="register.ejs">Creá tu cuenta <i class="far fa-address-card"></i>
+						<a href="/register">Creá tu cuenta <i class="far fa-address-card"></i>
 						</a>
 					</li>
 					<li>
-						<a href="login.ejs">Ingresá <i class="fas fa-sign-in-alt"></i></a>
+						<a href="/login">Ingresá <i class="fas fa-sign-in-alt"></i></a>
 					</li>
 				</ul>
 			</nav>
@@ -83,12 +83,20 @@
 				<h2 class="products-title">Ingresar</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá va el formulario de login. <br>
-			Debe cumplir con los puntos de la consigna y ser coherente con la tabla de la base de datos <br>
-			Eliminen estás líneas y coloquen el formulario. <br>
-			Recuerden todo lo que necesita tanto la etiqueta form como los campos input para operar correctamtente</i> <br>
-			////////////////
-			</h2>
+			<div class="col-12 col-md-8">
+				<form class="form" action="/login" method="GET">
+					<label class="form-label" for="email">Email</label>
+					<input class="form-input" type="email" name="email" id="email" required>
+
+					<label class="form-label" for="password">Contrasena</label>
+					<input class="form-input" type="password" name="password" id="password" required>
+
+					<label class="form-label" for="recordarme">Recordarme</label>
+					<input type="checkbox" name="recordarme" id="recordarme">
+
+					<button class="buy-now-button" type="submit">Ingresar</button>
+				</form>
+			</div>
 
 
 	<!-- footer -->
