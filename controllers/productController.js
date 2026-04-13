@@ -19,6 +19,7 @@ const productController = {
                 id: producto.id,
                 name: producto.name,
                 description: producto.description,
+                imagen: producto.imagen,
                 comentarios: cantidadComentarios
             });
         }
