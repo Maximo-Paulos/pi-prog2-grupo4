@@ -1,13 +1,13 @@
 const users = require('users');
 
 const userController = {
-    register: (req, res) => {
+    register: function (req, res)  {
         res.render('register');
     },
-    login: (req, res) => {
+    login: function (req, res)  {
         res.render('login');
     },
-    profile: (req, res) => {
+    profile: function (req, res)  {
         const userData = require('../db/data').user; 
         res.render('profile', { user: userData });
     }
