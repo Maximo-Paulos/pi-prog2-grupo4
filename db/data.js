@@ -6,7 +6,7 @@ let data = {
             precio: 20000,
             kilometros: 50000,
             description: "Descripción del producto 1",
-            imagen: "/images/products/autos.webp"
+            imagen: "/images/products/cronos.jpg"
         },
         {
             id: 2,
@@ -14,7 +14,7 @@ let data = {
             precio: 30000,
             kilometros: 30000,
             description: "Descripción del producto 2",
-            imagen: "/images/products/autos.webp"
+            imagen: "/images/products/Volkswagen-Gol.avif"
         },
         {
             id: 3,
@@ -22,7 +22,7 @@ let data = {
             precio: 25000,
             kilometros: 40000,
             description: "Descripción del producto 3",
-            imagen: "/images/products/autos.webp"
+            imagen: "/images/products/sanderos.jpg"
         },
         {
             id: 4,
@@ -30,7 +30,7 @@ let data = {
             precio: 35000,
             kilometros: 20000,
             description: "Descripción del producto 4",
-            imagen: "/images/products/autos.webp"
+            imagen: "/images/products/onix.avif"
         },
         {
             id: 5,
