@@ -55,7 +55,7 @@
 						<a href="profile.ejs"> Nombre del usuario <i class="fas fa-user"></i></a>
 					</li>
 					<li>
-						<form action="" method="post">
+						<form action="/login" method="get">
 							<button class="logout" type="submit">
 								Cerrar sesión <i class="fas fa-sign-in-alt"></i>
 							</button>
@@ -92,7 +92,7 @@
 				<section class="product-box">
 					<a href="product.ejs">
 						<figure class="product-box_image">
-							<img src="/images/products/default-image.png" alt="cafetera moulinex">
+							<img src="<%= product[index].imagen %>" alt="<%= product[index].name %>">
 						</figure>
 						<article class="product-box_data">
 							<h2><%= product[index].name %></h2>

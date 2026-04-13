@@ -5,70 +5,80 @@ let data = {
             name: "Fiat Cronos",
             precio: 20000,
             kilometros: 50000,
-            description: "Descripción del producto 1"
+            description: "Descripción del producto 1",
+            imagen: "/images/products/autos.webp"
         },
         {
             id: 2,
             name: "Volkswagen Gol",
             precio: 30000,
             kilometros: 30000,
-            description: "Descripción del producto 2"
+            description: "Descripción del producto 2",
+            imagen: "/images/products/autos.webp"
         },
         {
             id: 3,
             name: "Renault Sandero",
             precio: 25000,
             kilometros: 40000,
-            description: "Descripción del producto 3"
+            description: "Descripción del producto 3",
+            imagen: "/images/products/autos.webp"
         },
         {
             id: 4,
             name: "Chevrolet Onix",
             precio: 35000,
             kilometros: 20000,
-            description: "Descripción del producto 4"
+            description: "Descripción del producto 4",
+            imagen: "/images/products/autos.webp"
         },
         {
             id: 5,
             name: "Ford Fiesta",
             precio: 15000,
             kilometros: 60000,
-            description: "Descripción del producto 5"
+            description: "Descripción del producto 5",
+            imagen: "/images/products/autos.webp"
         },
         {
             id: 6,
             name: "Toyota Corolla",
             precio: 40000,
             kilometros: 10000,
-            description: "Descripción del producto 6"
+            description: "Descripción del producto 6",
+            imagen: "/images/products/autos.webp"
         },
         {
             id: 7,
             name: "Honda Civic",
             precio: 45000,
             kilometros: 8000,
-            description: "Descripción del producto 7"
+            description: "Descripción del producto 7",
+            imagen: "/images/products/autos.webp"
         },
         {
             id: 8,
             name: "Nissan Sentra",
             precio: 30000,
             kilometros: 40000,
-            description: "Descripción del producto 8"
+            description: "Descripción del producto 8",
+            imagen: "/images/products/autos.webp"
         },
         {
             id: 9,
             name: "Hyundai Elantra",
             precio: 35000,
             kilometros: 15000,
-            description: "Descripción del producto 9"
+            description: "Descripción del producto 9",
+            imagen: "/images/products/autos.webp"
         },
         {
             id: 10,
             name: "Kia Rio",
             precio: 25000,
             kilometros: 50000,
-            description: "Descripción del producto 10"
+            description: "Descripción del producto 10",
+            imagen: "/images/products/autos.webp"
         }
     ],
     comments: [
