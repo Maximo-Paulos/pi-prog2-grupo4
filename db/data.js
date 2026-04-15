@@ -38,7 +38,7 @@ let data = {
             precio: 15000,
             kilometros: 60000,
             description: "Descripción del producto 5",
-            imagen: "/images/products/autos.webp"
+            imagen: "/images/products/ford-fiesta.jpg"
         },
         {
             id: 6,
