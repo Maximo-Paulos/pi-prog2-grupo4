@@ -1,4 +1,12 @@
 let data = {
+    usuario: {
+    email: 'leonmc@gmail.com',
+    usuario: 'LeonMc',
+    contrasenia: 'LeonMc123',
+    fechaNacimiento: '2006-06-15',
+    documento: 90123456,
+    fotoPerfil: '/'
+  },
     productos: [
         {
             id: 1,
@@ -46,7 +54,7 @@ let data = {
             precio: 40000,
             kilometros: 10000,
             description: "Descripción del producto 6",
-            imagen: "/images/products/autos.webp"
+            imagen: "/images/products/toyotacorolla.jpg"
         },
         {
             id: 7,
@@ -54,7 +62,7 @@ let data = {
             precio: 45000,
             kilometros: 8000,
             description: "Descripción del producto 7",
-            imagen: "/images/products/autos.webp"
+            imagen: "/images/products/hondacivic.jpg"
         },
         {
             id: 8,
@@ -62,7 +70,7 @@ let data = {
             precio: 30000,
             kilometros: 40000,
             description: "Descripción del producto 8",
-            imagen: "/images/products/autos.webp"
+            imagen: "/images/products/nissansentra.jpg"
         },
         {
             id: 9,
@@ -70,7 +78,7 @@ let data = {
             precio: 35000,
             kilometros: 15000,
             description: "Descripción del producto 9",
-            imagen: "/images/products/autos.webp"
+            imagen: "/images/products/hyundaielantra.webp"
         },
         {
             id: 10,
@@ -78,7 +86,7 @@ let data = {
             precio: 25000,
             kilometros: 50000,
             description: "Descripción del producto 10",
-            imagen: "/images/products/autos.webp"
+            imagen: "/images/products/kiario.jpg"
         }
     ],
     comments: [
