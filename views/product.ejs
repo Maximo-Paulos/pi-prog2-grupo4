@@ -10,9 +10,9 @@
 	<!-- Font Awesome Stylesheet -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 	<!-- Bootstrap Grid Stylesheet -->
-	<link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
 	<!-- Own Stylesheet -->
-	<link rel="stylesheet" href="/css/app.css">
+	<link rel="stylesheet" href="/stylesheets/app.css">
 </head>
 <body>
 	<!-- Header -->
@@ -77,7 +77,7 @@
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title">Nombre del producto</h2> 
+			<h2 class="products-title"><%= producto.nombre %></h2>
 			<p class="product-detail-description">
 				<a href="product-edit.ejs">Editar</a>
 			</p>
@@ -85,57 +85,22 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="/images/products/default-image.png" alt="" class="product-detail-img">
-					<p class="product-detail-description">
-						Descripción corta del producto. En la página principal solo se ven 2 líneas de estar descripción.Lorem ipsum dolor,
-						sit amet consectetur adipisicing elit. Tae ipsam amet eum, totam dolore libero illo unde? Consectetur dolorem neque
-						veritatis.</p>
+					<img src="/images/products/<%= producto.imagen %>" alt="" class="product-detail-img">
+					<p class="product-detail-description"><%= producto.descripcion %></p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
+						<% for (let i = 0; i < producto.comentarios.length; i++) { %>
 						<article>
-							<img src="/images/users/profile-default.png" alt="">
+							<img src="/images/users/<%= producto.comentarios[i].imagenPerfil %>" alt="">
 							<div class="data">
 								<p class="user">
-								<strong> <a href="/views/profile.ejs">Nombre usuario: </a> </strong>
-								 Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora doloribus enim aspernatur fugit corrupti suscipit sit dolore magnam, praesentium explicabo inventore molestias facilis labore. Fugit ipsa mollitia odit inventore consequuntur.</p>
+									<strong> <a href="/views/profile.ejs"><%= producto.comentarios[i].nombreUsuario %>: </a> </strong>
+									<%= producto.comentarios[i].texto %>
+								</p>
 							</div>
 						</article>
-						<article>
-							<img src="/images/users/profile-default.png" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/views/profile.ejs">Nombre usuario: </a> </strong>
-									Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet consectetur.</p>
-							</div>
-						</article>
-						<article>
-							<img src="/images/users/profile-default.png" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/views/profile.ejs">Nombre usuario: </a> </strong>
-									Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									</p>
-							</div>
-						</article>
-						<article>
-							<img src="/images/users/profile-default.png" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/views/profile.ejs">Nombre usuario: </a> </strong>
-									Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet.</p>
-							</div>
-						</article>
-						<article>
-							<img src="/images/users/profile-default.png" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/views/profile.ejs">Nombre usuario: </a> </strong>
-									Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									Tempora doloribus enim aspernatur fugit corrupti suscipit sit dolore</p>
-							</div>
-						</article>
-
+						<% } %>
 					</section>
 					<form class="form" action="" method="POST">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
