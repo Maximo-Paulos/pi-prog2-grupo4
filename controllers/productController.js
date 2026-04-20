@@ -6,5 +6,10 @@ const controller = {
     }
 };
 
+const detalleProducto = {
+    detalles: function (req, res) {
+        res.render('add');
+    }
+};
 
 module.exports = controller;
