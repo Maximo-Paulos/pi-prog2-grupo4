@@ -1,5 +1,5 @@
 const product = require('../db/data');
-const users = require('../db/data').usario;
+const users = require('../db/data');
 
 const userController = {
     register: function (req, res)  {
@@ -11,6 +11,5 @@ const userController = {
     profile: function (req, res)  {
         res.render('profile', {usuario : users.usuario });
     }
-
 };
 module.exports = userController;
