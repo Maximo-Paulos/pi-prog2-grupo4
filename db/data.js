@@ -84,10 +84,14 @@ let data = {
     comments: [
         {
             id: 1,
+            nombreUsuario: "Usuario 1",
+            idUsuario: 1,
             comments: "Comentario 1"
         },
         {
             id: 2,
+            nombreUsuario: "Usuario 2",
+            idUsuario: 2,
             comments: "Comentario 2"
         },
         {
