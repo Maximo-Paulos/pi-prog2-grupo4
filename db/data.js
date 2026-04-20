@@ -1,184 +1,142 @@
 let data = {
+    usuario: {
+        email: 'leonmc@gmail.com',
+        usuario: 'LeonMc',
+        contrasenia: 'LeonMc123',
+        fechaNacimiento: '2006-06-15',
+        documento: 90123456,
+        fotoPerfil: '/',
+    }, 
     productos: [
         {
             id: 1,
-            name: "Fiat Cronos",
-            precio: 20000,
-            kilometros: 50000,
-            description: "Descripción del producto 1",
-            imagen: "/images/products/cronos.jpg"
+            nombre: "Fiat Cronos",
+            descripcion: "Descripción del producto 1",
+            imagen: "/images/products/cronos.jpg",
+            comentarios: [
+                {
+                    nombreUsuario: 'maria123',
+                    texto: 'Muy buen auto, lo recomiendo.',
+                    imagenPerfil: '/images/users/default-image.png'
+                },
+                {
+                    nombreUsuario: 'bombini',
+                    texto: 'Muy buena calidad',
+                    imagenPerfil: '/images/users/default-image.png'
+                }
+            ]
         },
         {
             id: 2,
-            name: "Volkswagen Gol",
-            precio: 30000,
-            kilometros: 30000,
-            description: "Descripción del producto 2",
-            imagen: "/images/products/Volkswagen-Gol.avif"
+            nombre: "Volkswagen Gol",
+            descripcion: "Descripción del producto 2",
+            imagen: "/images/products/Volkswagen-Gol.avif",
+            comentarios: [
+                {
+                    nombreUsuario: 'juan456',   
+                    texto: 'Excelente relación calidad-precio.',
+                    imagenPerfil: '/images/users/default-image.png',
+                },
+                {
+                    nombreUsuario: 'ana789',
+                    texto: 'Muy buen rendimiento.',
+                    imagenPerfil: '/images/users/default-image.png',
+                }
+            ]   
         },
         {
             id: 3,
-            name: "Renault Sandero",
-            precio: 25000,
-            kilometros: 40000,
-            description: "Descripción del producto 3",
-            imagen: "/images/products/sanderos.jpg"
+            nombre: "Renault Sandero",
+            descripcion: "Descripción del producto 3",
+            imagen: "/images/products/sanderos.jpg",
+            comentarios: [
+                {
+                    nombreUsuario: 'carlos321', 
+                    texto: 'Cómodo y espacioso.',
+                    imagenPerfil: '/images/users/default-image.png',
+                },
+            ]
         },
         {
             id: 4,
-            name: "Chevrolet Onix",
-            precio: 35000,
-            kilometros: 20000,
-            description: "Descripción del producto 4",
-            imagen: "/images/products/onix.avif"
+            nombre: "Chevrolet Onix",
+            descripcion: "Descripción del producto 4",
+            imagen: "/images/products/onix.avif",
+            comentarios: [
+                {
+                    nombreUsuario: 'laura654',  
+                    texto: 'Muy buen diseño y tecnología.',
+                    imagenPerfil: '/images/users/default-image.png',
+                },
+            ]
         },
         {
             id: 5,
-            name: "Ford Fiesta",
-            precio: 15000,
-            kilometros: 60000,
-            description: "Descripción del producto 5",
-            imagen: "/images/products/ford-fiesta.jpg"
+            nombre: "Ford Fiesta",
+            descripcion: "Descripción del producto 5",
+            imagen: "/images/products/ford-fiesta.jpg",
+            comentarios: []
         },
         {
             id: 6,
-            name: "Toyota Corolla",
-            precio: 40000,
-            kilometros: 10000,
-            description: "Descripción del producto 6",
-            imagen: "/images/products/autos.webp"
+            nombre: "Toyota Corolla",
+            descripcion: "Descripción del producto 6",
+            imagen: "/images/products/toyotacorolla.jpg",
+            comentarios: [
+                {
+                    nombreUsuario: 'pedro987',  
+                    texto: 'Muy confiable y eficiente.',
+                    imagenPerfil: '/images/users/default-image.png',
+                },
+                {
+                    nombreUsuario: 'MaxiPolos',
+                    texto: 'Muy buen diseño.',
+                    imagenPerfil: '/images/users/default-image.png',
+                }
+            ]
         },
         {
             id: 7,
-            name: "Honda Civic",
-            precio: 45000,
-            kilometros: 8000,
-            description: "Descripción del producto 7",
-            imagen: "/images/products/autos.webp"
+            nombre: "Honda Civic",
+            descripcion: "Descripción del producto 7",
+            imagen: "/images/products/hondacivic.jpg",
+            comentarios: [
+                {
+                    nombreUsuario: 'sophia321', 
+                    texto: 'Excelente rendimiento y estilo.',
+                    imagenPerfil: '/images/users/default-image.png',
+                },
+            ]
         },
         {
             id: 8,
-            name: "Nissan Sentra",
-            precio: 30000,
-            kilometros: 40000,
-            description: "Descripción del producto 8",
-            imagen: "/images/products/autos.webp"
+            nombre: "Nissan Sentra",
+            descripcion: "Descripción del producto 8",
+            imagen: "/images/products/nissansentra.jpg",
+            comentarios: []
         },
         {
             id: 9,
-            name: "Hyundai Elantra",
-            precio: 35000,
-            kilometros: 15000,
-            description: "Descripción del producto 9",
-            imagen: "/images/products/autos.webp"
+            nombre: "Hyundai Elantra",
+            descripcion: "Descripción del producto 9",
+            imagen: "/images/products/hyundaielantra.webp",
+            comentarios: []
         },
         {
             id: 10,
-            name: "Kia Rio",
-            precio: 25000,
-            kilometros: 50000,
-            description: "Descripción del producto 10",
-            imagen: "/images/products/autos.webp"
+            nombre: "Kia Rio",
+            descripcion: "Descripción del producto 10",
+            imagen: "/images/products/kiario.jpg",
+            comentarios: [
+                {
+                    nombreUsuario: 'lucas654',
+                    texto: 'Muy buen auto por su precio.',
+                    imagenPerfil: '/images/users/default-image.png',
+                },
+            ]
         }
+
     ],
-    comments: [
-        {
-            id: 1,
-            nombreUsuario: "Usuario 1",
-            idUsuario: 1,
-            comments: "Comentario 1"
-        },
-        {
-            id: 2,
-            nombreUsuario: "Usuario 2",
-            idUsuario: 2,
-            comments: "Comentario 2"
-        },
-        {
-            id: 3,
-            comments: "Comentario 3"
-        },
-        {
-            id: 4,
-            comments: "Comentario 4"
-        },
-        {
-            id: 5,
-            comments: "Comentario 5"
-        },
-        {
-            id: 6,
-            comments: "Comentario 6"
-        },
-        {
-            id: 7,
-            comments: "Comentario 7"
-        },
-        {
-            id: 8,
-            comments: "Comentario 8"
-        },
-        {
-            id: 9,
-            comments: "Comentario 9"
-        },
-        {
-            id: 10,
-            comments: "Comentario 10"
-        }
-    ],
-    users: [
-    {
-        id: 1,
-        name: "Usuario 1",
-        email: ""
-    },
-    {
-        id: 2,
-        name:"Usuario 2",
-        email: "",
-    },
-    {
-        id: 3,
-        name: "Usuario 3",
-        email: "",
-    }, 
-    {
-    id: 4,
-    name: "Usuario 4",  
-    email: "",
-    },
-    {
-    id: 5,
-    name: "Usuario 5",
-    email: "",
-    },
-    {
-    id: 6,
-    name: "Usuario 6",
-    email: "",
-    },
-    {
-    id: 7,
-    name: "Usuario 7",
-    email: "",
-    },
-    {
-    id: 8,
-    name: "Usuario 8",
-    email: "",
-    },
-    {
-    id: 9,
-    name: "Usuario 9",
-    email: "",
-    },
-    {
-    id: 10,
-    name: "Usuario 10",
-    email: "",
-    },
-]
 };
 
 module.exports = data;
