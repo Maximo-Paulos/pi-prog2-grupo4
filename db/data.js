@@ -1,7 +1,7 @@
 let data = {
     usuario: {
         email: 'leonmc@gmail.com',
-        usuario: 'LeonMc',
+        nombre: 'LeonMc',
         contrasenia: 'LeonMc123',
         fechaNacimiento: '2006-06-15',
         documento: 90123456,
