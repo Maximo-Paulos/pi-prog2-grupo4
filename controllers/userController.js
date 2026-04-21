@@ -9,7 +9,7 @@ const userController = {
         res.render('login');
     },
     profile: function (req, res)  {
-        res.render('profile', {usuario : users.usuario });
+        res.render('profile', { usuario: users.usuario, productos: users.productos });
     }
 };
 module.exports = userController;
