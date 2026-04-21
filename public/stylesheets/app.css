@@ -26,6 +26,15 @@
   margin-right: 6px;
 }
 
+.header-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
 
 /*====== Basics ======*/
 * {
@@ -167,23 +176,15 @@ hr {
 
 /*====== Banner ======*/
 .banner {
-  background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url(/images/products/cronos.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: #1a1a1a;
+  padding: 40px 0;
+  text-align: center;
 }
 
-.banner::after {
-  content: "Encontrá tu próximo auto";
+.banner h2 {
   color: #ffffff;
-  font-size: 32px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  font-size: 28px;
+  margin: 0;
 }
 
 .banner img {

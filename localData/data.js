@@ -3,9 +3,7 @@ let data = {
         email: 'leonmc@gmail.com',
         nombre: 'LeonMc',
         contrasenia: 'LeonMc123',
-        fechaNacimiento: '2006-06-15',
-        documento: 90123456,
-        fotoPerfil: '/',
+        fotoPerfil: 'profile-default.png',
     }, 
     productos: [
         {

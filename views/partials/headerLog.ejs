@@ -8,7 +8,7 @@
 				</div>
 	
 				<div class="col-7 col-md-6">
-					<form action="/" method="GET" class="search-form">
+					<form action="/products/search" method="GET" class="search-form">
 						<input type="text" name="search" placeholder="Buscar autos, marcas y modelos"
 							class="search-form_input">
 						<button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
@@ -34,7 +34,10 @@
 				</ul>
 				<ul class="right-navbar">
 					<li>
-						<a href="/users"> <%= usuario.nombre %> <i class="fas fa-user"></i></a>
+						<a href="/users">
+							<img src="/images/users/<%= usuario.fotoPerfil %>" alt="foto" class="header-avatar">
+							<%= usuario.nombre %> (<%= usuario.email %>)
+						</a>
 					</li>
 					<li>
 						<form action="/users/login" method="get">

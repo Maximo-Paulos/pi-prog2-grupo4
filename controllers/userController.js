@@ -1,5 +1,4 @@
-const product = require('../db/data');
-const users = require('../db/data');
+const users = require('../localData/data');
 
 const userController = {
     register: function (req, res)  {
