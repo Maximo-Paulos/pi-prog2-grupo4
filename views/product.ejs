@@ -23,9 +23,6 @@
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%= producto.nombre %></h2>
-			<p class="product-detail-description">
-				<a href="product-edit.ejs">Detalle del producto</a>
-			</p>
 		</div>
 		<div class="product-detail">
 			<div class="row">
@@ -40,7 +37,7 @@
 							<img src="/images/users/<%= producto.comentarios[i].imagenPerfil %>" alt="">
 							<div class="data">
 								<p class="user">
-									<strong> <a href="/views/profile.ejs"><%= producto.comentarios[i].nombreUsuario %>: </a> </strong>
+									<strong> <a href="/users"><%= producto.comentarios[i].nombreUsuario %>: </a> </strong>
 									<%= producto.comentarios[i].texto %>
 								</p>
 							</div>
