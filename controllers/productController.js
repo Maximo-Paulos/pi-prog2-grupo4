@@ -20,7 +20,7 @@ const controller = {
 
     detalle: function (req, res) {
         const id = req.params.id;
-        let producto = data.productos[0];
+        let producto;
         for (let i = 0; i < data.productos.length; i++) {
             if (data.productos[i].id == id) {
                 producto = data.productos[i];
