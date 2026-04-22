@@ -24,3 +24,26 @@ VALUES (
     'LeonMc123',
     'fotoPerfil.jpg'
 );
+CREATE TABLE productos (
+    id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    usuarioId INT UNSIGNED NOT NULL,
+    imagen VARCHAR(255) NOT NULL,
+    nombre VARCHAR(100) NOT NULL,
+    descripcion TEXT NOT NULL,
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    deletedAt TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (usuarioId) REFERENCES usuarios(id)
+);
+INSERT INTO productos (
+    usuarioId,
+    imagen,
+    nombre,
+    descripcion
+)
+VALUES (
+    1,
+    'cronos.jpg',
+    'Fiat Cronos',
+    'Sedán económico argentino, cómodo para uso diario y con buen baúl.'
+);
