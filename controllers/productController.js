@@ -5,7 +5,7 @@ const controller = {
         res.render('index', { productos: data.productos, usuario: data.usuario });
     },
      productAdd: function (req, res) {
-        res.render('product-add', { productos: data.productos, usuario: data.usuario });
+        res.render('product-add', { productos: data.productos, usuario: data.usuario })
     },
      productEdit: function (req, res) {
         res.render('product-edit', { productos: data.productos, usuario: data.usuario });

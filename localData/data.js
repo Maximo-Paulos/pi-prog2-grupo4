@@ -3,13 +3,13 @@ let data = {
         email: 'leonmc@gmail.com',
         nombre: 'LeonMc',
         contrasenia: 'LeonMc123',
-        fotoPerfil: 'profile-default.png',
+        fotoPerfil: 'fotoPerfil.jpg',
     }, 
     productos: [
         {
             id: 1,
             nombre: "Fiat Cronos",
-            descripcion: "Descripción del producto 1",
+            descripcion: "Sedán económico argentino, cómodo para uso diario y con buen baúl.",
             imagen: "cronos.jpg",
             comentarios: [
                 {
@@ -27,7 +27,7 @@ let data = {
         {
             id: 2,
             nombre: "Volkswagen Gol",
-            descripcion: "Descripción del producto 2",
+            descripcion: "Clásico hatch confiable y simple, muy usado por su bajo costo de mantenimiento",
             imagen: "Volkswagen-Gol.avif",
             comentarios: [
                 {
@@ -45,7 +45,7 @@ let data = {
         {
             id: 3,
             nombre: "Renault Sandero",
-            descripcion: "Descripción del producto 3",
+            descripcion: "Hatch compacto y económico, ideal para la ciudad.",
             imagen: "sanderos.jpg",
             comentarios: [
                 {
@@ -58,7 +58,7 @@ let data = {
         {
             id: 4,
             nombre: "Chevrolet Onix",
-            descripcion: "Descripción del producto 4",
+            descripcion: "Compacto moderno con buena tecnología y consumo eficiente",
             imagen: "onix.avif",
             comentarios: [
                 {
@@ -71,14 +71,14 @@ let data = {
         {
             id: 5,
             nombre: "Ford Fiesta",
-            descripcion: "Descripción del producto 5",
+            descripcion: "Hatch ágil y divertido de manejar, con buen equipamiento en sus versiones más completas.",
             imagen: "ford-fiesta.jpg",
             comentarios: []
         },
         {
             id: 6,
             nombre: "Toyota Corolla",
-            descripcion: "Descripción del producto 6",
+            descripcion: "Sedán confiable y duradero, destacado por su confort y bajo mantenimiento.",
             imagen: "toyotacorolla.jpg",
             comentarios: [
                 {
@@ -96,7 +96,7 @@ let data = {
         {
             id: 7,
             nombre: "Honda Civic",
-            descripcion: "Descripción del producto 7",
+            descripcion: "Sedán con diseño deportivo, buen rendimiento y calidad de construcción.",
             imagen: "hondacivic.jpg",
             comentarios: [
                 {
@@ -109,21 +109,21 @@ let data = {
         {
             id: 8,
             nombre: "Nissan Sentra",
-            descripcion: "Descripción del producto 8",
+            descripcion: "Sedán cómodo y elegante, enfocado en confort y manejo suave",
             imagen: "nissansentra.jpg",
             comentarios: []
         },
         {
             id: 9,
             nombre: "Hyundai Elantra",
-            descripcion: "Descripción del producto 9",
+            descripcion: "Sedán moderno con buen equipamiento y diseño atractivo.",
             imagen: "hyundaielantra.webp",
             comentarios: []
         },
         {
             id: 10,
             nombre: "Kia Rio",
-            descripcion: "Descripción del producto 10",
+            descripcion: "Compacto práctico y eficiente, con buena relación precio-calidad.",
             imagen: "kiario.jpg",
             comentarios: [
                 {
