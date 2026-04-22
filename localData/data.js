@@ -28,7 +28,7 @@ let data = {
             id: 2,
             nombre: "Volkswagen Gol",
             descripcion: "Clásico hatch confiable y simple, muy usado por su bajo costo de mantenimiento",
-            imagen: "Volkswagen-Gol.avif",
+            imagen: "golf.jpg",
             comentarios: [
                 {
                     nombreUsuario: 'juan456',   
@@ -117,7 +117,7 @@ let data = {
             id: 9,
             nombre: "Hyundai Elantra",
             descripcion: "Sedán moderno con buen equipamiento y diseño atractivo.",
-            imagen: "hyundaielantra.webp",
+            imagen: "hyundai-elantra.webp",
             comentarios: []
         },
         {
