@@ -85,8 +85,76 @@ Las claves foráneas que correspondan.
 Mediante lenguaje SQL deberán insertar al menos 5 usuarios, 10 productos y 3 comentarios para cada producto. Podrán usar los datos creados en el módulo de datos del punto 2.
 Los campos de las tablas deben coincidir con la información solicitada en cada formulario creado para el proyecto. Debe existir coherencia entre los campos pedidos en el formulario y los datos que almacena la tabla. Haceme un resumen del proyecto que tengo que hacer esto 
 
+Segunda parte:
 
-sdfghj
+Punto 1 - Base de datos
+Deberán entregar junto con el proyecto el archivo SQL (o dump de la base de datos) utilizado en el proyecto y que cumpla con los siguientes requisitos:
+Creación de la base de datos.
+Creación de las tablas de la base de datos.
+Inserción de datos en las tablas.
+Creación de foreign keys.
+El archivo SQL debe permitir a los profesores cargar en Workbench (o otro gestor MySQL) la estructura y acceder a los datos de la base que usaron en el proyecto. 
+Punto 2 - Registración
+El catálogo debe permitir la registración de usuarios. El formulario pedirá al menos los siguientes datos y funcionalidades:
+Nombre de usuario.
+Email: el email ingresado no debe estar repetido en la base de datos. Si el usuario envía el campo vacío o el email ya existe el usuario debe recibir un mensaje especificando el error.
+Contraseña: debe tener al menos 3 caracteres. Debe almacenarse en la base de datos de forma encriptada. Si el usuario envía el campo vacío o con menos de 3 caracteres debe recibir un mensaje especificando el error.
+Las validaciones del formulario deben: 
+Hacerlo mediante el módulo de express-validator
+Cumplir con todos los requisitos de los campos mencionados anteriormente 
+Ser enviados a la vista con un res.send( )
+
+Al crear nuevos usuarios en la base de datos debe plasmarse la fecha de creación en el campo created_at (o createdAt si usan camelCase).
+Queda a criterio del grupo agregar campos adicionales para los usuarios.
+Si el usuario ya está logueado y quiere acceder a esta página debe ser redireccionado a su perfil.
+Punto 3 - Login
+El catálogo debe contar con una página de login que debe cumplir con las siguientes características.
+El usuario debe poder ingresar utilizando su email y su contraseña. 
+Email: validar que el email exista en la db. De lo contrario el usuario debe recibir un mensaje especificando el error.
+Contraseña: validar que la contraseña sea correcta. De lo contrario el usuario debe recibir un mensaje especificando el error.
+La página de login debe contar con la posibilidad de recordar el usuario.
+Una vez que el usuario se haya logueado el header en todas las páginas debe modificarse:
+Saludando al usuario. 
+Los links de “Registración” y “Login” deben desaparecer del header. 
+Deben verse accesos a “Mi Perfil”, “Logout” y “Agregar producto”.
+Si el usuario ya está logueado y quiere acceder a esta página debe ser redireccionado a su perfil.
+Punto 4 - Logout
+La página debe permitir el logout completo del usuario.
+Punto 5 - Buscador de productos
+El catálogo debe contar con un buscador de productos que deberá cumplir con las siguientes características:
+Buscar un producto indicando parte de su nombre.
+El resultado de búsqueda deberá mostrar los productos que contengan el término buscado.
+En caso de no encontrar resultados debe mostrar el mensaje “No hay resultados para su criterio de búsqueda”.
+Al clickear en un producto debe mostrarse la página de detalle del producto.
+Los resultados de búsqueda deben mostrar el nombre del usuario que cargó el producto. Clickear sobre el nombre debe llevar al perfil del usuario.
+Punto 6 - Perfil del usuario
+Dentro de la página de perfil:
+Debe indicarse el número total de productos que cargó el usuario.
+Deben verse todos los productos cargados por el usuario.
+Cada producto debe tener su correspondiente link para acceder al detalle.
+Punto 7 - Home page
+La home del sitio debe mostrar todos los productos que contenga la base de datos. Cada producto mostrado debe tener al menos su foto, nombre del producto y usuario que lo cargó. El dato del usuario puede ser el email o el nombre de usuario dependiendo lo que cada equipo tenga en su tabla de la base de datos.
+Hacer click sobre el usuario debe redirigir a la página de perfil.
+Hacer click sobre cada producto debe redirigir al detalle del mismo.
+Punto 8 - Productos creación
+Únicamente los usuarios logueados podrán cargar un nuevo producto. El formulario de creación tendrá los campos asignados por los alumnos sin embargo debe contar cómo mínimo con:
+Imagen a mostrar: en el form carguen el nombre del archivo con su extensión. Luego guardan el archivo en la carpeta /public/imgs.
+Nombre del producto.
+Descripción corta.
+Las validaciones deben realizarse mediante el módulo de express-validator  y siendo enviados a la vista con un res.send( )..
+De forma automática debe almacenarse en la base de datos la fecha de creación del producto (created_at o createdAt).
+Punto 9 - Productos edición
+En el detalle de un producto, únicamente los usuarios logueados podrán ver un botón para editar productos creados por ellos mismos. En caso de que un usuario no autenticado intente acceder en la ruta de edición de un producto, deberá ser redireccionado al formulario de login. Si un usuario logueado intenta forzar la ruta de edición de un producto que no le pertenece, deberá ser redireccionado a la Home Page. 
+También se deben implementar las siguientes funcionalidades:
+El formulario debe mostrar los datos actuales del producto a editar.
+Al editar los datos correctamente, deben impactarse los cambios en la db y actualizarse de forma automática el campo updated_at (o updatedAt si usan camel case).
+Las validaciones deben hacerse mediante el módulo de express-validator  y siendo enviados a la vista con un res.send( )..
+Punto 10 - Productos eliminación
+En el detalle de un producto, únicamente los usuarios logueados podrán ver un botón para eliminar productos creados por ellos mismos. En caso de que un usuario no autenticado intente eliminar un producto deberá ser redireccionado al formulario de login. Si un usuario logueado intenta forzar la ruta de eliminación de un producto que no le pertenece, deberá ser redireccionado a la Home Page.
+Punto 11 - Comentarios
+Únicamente los usuarios logueados podrán agregar comentarios al producto. El formulario debe contar con la seguridad suficiente para que únicamente un usuario logueado pueda agregar un comentario. En caso de que un usuario no logueado quiera dejar un comentario la página deberá direccionar al formulario de login. 
+El comentario creado debe mostrar el nombre del usuario que comentó. Clickear sobre el nombre del usuario debe llevar al perfil del usuario.
+La fecha de creación debe  guardarse en el campo created_at (o createdAt).
 
 
 

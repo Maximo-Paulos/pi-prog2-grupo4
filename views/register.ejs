@@ -29,7 +29,12 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<div class="col-12 col-md-8">
-				<form class="form" action="/" method="GET">
+				<% if (typeof errors !== 'undefined') { %>
+						<% errors.forEach(function(e) { %>
+							<p style="color:red;"><%= e.msg %></p>
+						<% }) %>
+					<% } %>
+					<form class="form" action="/users/register" method="POST">
 					<label class="form-label" for="email">Email</label>
 					<input class="form-input" type="email" name="email" id="email" required>
 
