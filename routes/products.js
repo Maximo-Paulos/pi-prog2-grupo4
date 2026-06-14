@@ -10,7 +10,7 @@ let validations = [
 
     body('descripcion')
     .notEmpty().withMessage('Debes completar la descripción')
-    .isLength({ min: 20 }).withMessage('La descripción debe tener al menos 20 caracteres'),
+    .isLength({ min: 20 }).withMessage('La descripción debe tener al menos 20 caracteres')
 ];
 
 router.get('/', productController.productos);
