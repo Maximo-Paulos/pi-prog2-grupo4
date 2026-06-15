@@ -44,7 +44,8 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Mis productos</h2>
+				<h2 class="products-title">Productos de <%= usuario.nombre %></h2>
+				<p>Total de productos cargados: <%= productos.length %></p>
 			</div>
 			<!-- Show mis productos -->
 			<% for (let i = 0; i < productos.length; i++) { %>

@@ -14,6 +14,7 @@ const validaciones = [
 
 
 router.get('/', userController.profile);
+router.get('/perfil/:id', userController.perfil);
 router.get('/login', userController.login);
 router.get('/register', userController.register);
 router.post('/register', validaciones, userController.create);
