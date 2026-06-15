@@ -16,7 +16,9 @@ const validaciones = [
 router.get('/', userController.profile);
 router.get('/perfil/:id', userController.perfil);
 router.get('/login', userController.login);
+router.post('/login', userController.loginProceso);
+router.get('/logout', userController.logout);
 router.get('/register', userController.register);
-router.post('/register', validaciones, userController.create);
+router.post('/register', validaciones, userController.data);
 
 module.exports = router;

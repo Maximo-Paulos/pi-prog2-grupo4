@@ -6,7 +6,7 @@
 						<h1 class="site-name"><i class="fas fa-car"></i> Mercado Autos</h1>
 					</a>
 				</div>
-	
+
 				<div class="col-7 col-md-6">
 					<form action="/products/search" method="GET" class="search-form">
 						<input type="text" name="search" placeholder="Buscar autos, marcas y modelos"
@@ -14,7 +14,7 @@
 						<button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
 					</form>
 				</div>
-	
+
 				<div class="col-12 col-md-4">
 					<a class="main-header_credit-link">
 						<i class="fas fa-car-side"></i>
@@ -22,23 +22,38 @@
 					</a>
 				</div>
 			</div>
-	
+
 			<button class="btn-toggle-navbar">
 				<i class="fas fa-bars"></i>
 			</button>
-	
+
 			<nav class="main-navbar">
 				<ul class="left-navbar">
 					<li><a href="/">Todos los productos</a></li>
+					<% if (locals.user) { %>
+						<li><a href="/products/add">Agregar producto</a></li>
+					<% } %>
 				</ul>
 				<ul class="right-navbar">
-					<li>
-						<a href="/users/register">Creá tu cuenta <i class="far fa-address-card"></i>
-						</a>
-					</li>
-					<li>
-						<a href="/users/login">Ingresá <i class="fas fa-sign-in-alt"></i></a>
-					</li>
+					<% if (locals.user) { %>
+						<li>
+							<a href="/users">
+								Hola, bienvenido <%= locals.user.nombre %> <i class="fas fa-user"></i>
+							</a>
+						</li>
+						<li>
+							<a href="/users/logout" class="logout">
+								Cerrar sesión <i class="fas fa-sign-in-alt"></i>
+							</a>
+						</li>
+					<% } else { %>
+						<li>
+							<a href="/users/register">Creá tu cuenta <i class="far fa-address-card"></i></a>
+						</li>
+						<li>
+							<a href="/users/login">Ingresá <i class="fas fa-sign-in-alt"></i></a>
+						</li>
+					<% } %>
 				</ul>
 			</nav>
 		</div>
