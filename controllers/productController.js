@@ -31,7 +31,16 @@ const controller = {
         }
     },
     searchResults: function (req, res) {
-        res.render('search-results', { productos: data.productos, usuario: data.usuario });
+        let busqueda = req.query.search;
+        let resultados = [];
+
+        for (let i = 0; i < data.productos.length; i++) {
+            let nombreProducto = data.productos[i].nombre.toLowerCase();
+            if (busqueda && nombreProducto.includes(busqueda.toLowerCase())) {
+                resultados.push(data.productos[i]);
+            }
+        }
+        res.render('search-results', { productos: resultados, busqueda: busqueda, usuario: data.usuario });
     },
 
     detalle: function (req, res) {

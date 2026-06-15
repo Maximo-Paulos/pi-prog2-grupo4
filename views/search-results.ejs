@@ -21,12 +21,18 @@
 	<%- include("./partials/headerLog.ejs") %>
 	<!-- /Header -->
 
-	<!-- Novedades -->
+	<!-- Resultados de búsqueda -->
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Resultados de búsqueda</h2>
+				<h2 class="products-title">Resultados de búsqueda para "<%= busqueda %>"</h2>
 			</div>
+
+			<% if (productos.length === 0) { %>
+			<div class="col-12">
+				<p>No hay resultados para su criterio de búsqueda</p>
+			</div>
+			<% } else { %>
 			<% for (let i = 0; i < productos.length; i++) { %>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
@@ -40,15 +46,18 @@
 							<p>Comentarios: <%= productos[i].comentarios.length %></p>
 						</article>
 					</a>
+					<p class="product-box_user">
+						Publicado por: <a href="/users"><%= usuario.nombre %></a>
+					</p>
 				</section>
 			</div>
 			<% } %>
+			<% } %>
 		</div>
+	</div>
 
 
-	<!-- footer -->
 	<%- include("./partials/footer.ejs") %>
-	<!-- /footer -->
 </body>
 
 </html>
