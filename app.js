@@ -22,6 +22,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  secret: 'mercadoautos',
+  resave: false,
+  saveUninitialized: false,
+}));
+
+// Exponer el usuario logueado a todas las vistas
+app.use(function (req, res, next) {
+  if (req.session.user != undefined) {
+    res.locals.user = req.session.user;
+  }
+  return next();
+});
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productRouter);
