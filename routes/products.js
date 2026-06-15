@@ -3,7 +3,7 @@ const router = express.Router();
 const productController = require('../controllers/productController');
 const { body } = require('express-validator');
 
-let validations = [
+const validaciones = [
     body('imagen').notEmpty().withMessage('Debes completar la imagen'),
 
     body('nombre').notEmpty().withMessage('Debes completar el nombre del producto'),
@@ -15,7 +15,7 @@ let validations = [
 
 router.get('/', productController.productos);
 router.get('/add', productController.productAdd);
-router.post('/add', validations, productController.productAdd);
+router.post('/add', validaciones, productController.guardarProducto);
 router.get('/search', productController.searchResults);
 router.get('/product/:id', productController.detalle);
 

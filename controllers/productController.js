@@ -1,4 +1,6 @@
 const data = require('../localData/data');
+const {validationResult} = require('express-validator');
+const db = require('../database/models');
 
 const controller = {
     productos: function (req, res) {
