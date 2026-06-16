@@ -18,7 +18,7 @@ const userController = {
         })
         .then(function (usuario) {
             let misProductos = usuario.productos;
-            return res.render('profile', { user: usuario, productos: misProductos });
+            return res.render('profile', { usuario: usuario, productos: misProductos });
         })
         .catch(function (error) {
             console.log(error);
@@ -37,7 +37,7 @@ const userController = {
             if (!usuario) {
                 return res.send("Usuario no encontrado");
             }
-            return res.render('profile', { user: usuario, productos: usuario.productos });
+            return res.render('profile', { usuario: usuario, productos: usuario.productos });
         })
         .catch(function (error) {
             console.log(error);
