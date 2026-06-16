@@ -30,7 +30,7 @@
 			<!-- Show the "ultimos" products -->
 			<div class="col-12 col-md-8">
 				<% if (typeof error !== 'undefined') { %>
-					<p style="color:red;"><%= error %></p>
+					<p class="error"><%= error %></p>
 				<% } %>
 				<form class="form" action="/users/login" method="POST">
 					<label class="form-label" for="email">Email</label>

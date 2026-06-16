@@ -31,7 +31,7 @@
 			<div class="col-12 col-md-8">
 				<% if (typeof errors !== 'undefined') { %>
 						<% errors.forEach(function(e) { %>
-							<p style="color:red;"><%= e.msg %></p>
+							<p class="error"><%= e.msg %></p>
 						<% }) %>
 					<% } %>
 					<form class="form" action="/users/register" method="POST">
