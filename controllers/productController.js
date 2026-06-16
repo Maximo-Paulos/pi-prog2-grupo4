@@ -17,7 +17,6 @@ const controller = {
     },
 
     productAdd: function (req, res) {
-        // solo un usuario logueado puede ver el formulario de carga
         if (!req.session.user) {
             return res.redirect('/users/login');
         }
@@ -25,14 +24,12 @@ const controller = {
     },
 
     guardarProducto: function (req, res) {
-        // seguridad: si no esta logueado lo mando al login
         if (!req.session.user) {
             return res.redirect('/users/login');
         }
 
         const errors = validationResult(req);
 
-        // si hay errores de validacion los devuelvo a la vista
         if (!errors.isEmpty()) {
             return res.render('product-add', { errors: errors.array() });
         }
@@ -49,6 +46,68 @@ const controller = {
         .catch(function (error) {
             console.log(error);
             res.send("Ocurrió un error al cargar el producto");
+        });
+    },
+
+    productEdit: function (req, res) {
+        if (!req.session.user) {
+            return res.redirect('/users/login');
+        }
+
+        db.Product.findByPk(req.params.id)
+        .then(function (producto) {
+            if (!producto) {
+                return res.send("Producto no encontrado");
+            }
+            if (producto.usuarioId != req.session.user.id) {
+                return res.redirect('/');
+            }
+            return res.render('product-edit', { producto: producto });
+        })
+        .catch(function (error) {
+            console.log(error);
+            res.send("Error al buscar el producto");
+        });
+    },
+
+    actualizarProducto: function (req, res) {
+        if (!req.session.user) {
+            return res.redirect('/users/login');
+        }
+
+        db.Product.findByPk(req.params.id)
+        .then(function (producto) {
+            if (!producto) {
+                return res.send("Producto no encontrado");
+            }
+            if (producto.usuarioId != req.session.user.id) {
+                return res.redirect('/');
+            }
+
+            const errors = validationResult(req);
+
+            if (!errors.isEmpty()) {
+                return res.send(errors.array());
+            }
+
+            db.Product.update({
+                nombre: req.body.nombre,
+                descripcion: req.body.descripcion,
+                imagen: req.body.imagen
+            }, {
+                where: { id: req.params.id }
+            })
+            .then(function () {
+                res.redirect('/products/product/' + req.params.id);
+            })
+            .catch(function (error) {
+                console.log(error);
+                res.send("Ocurrió un error al editar el producto");
+            });
+        })
+        .catch(function (error) {
+            console.log(error);
+            res.send("Error al buscar el producto");
         });
     },
 
