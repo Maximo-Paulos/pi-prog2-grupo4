@@ -5,7 +5,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link width="" rel="shortcut icon" href="./images/logo-mercado-liebre.jpg" />
+	<link width="" rel="shortcut icon" href="/images/logo-mercado-liebre.jpg" />
 
 	<title> Mercado Autos Argentina</title>
 	<!-- Font Awesome Stylesheet -->
@@ -18,22 +18,29 @@
 
 <body>
 	<!-- Header -->
-	<%- include("./partials/headerLog.ejs") %>
+	<%- include("./partials/header.ejs") %>
 	<!-- /Header -->
 
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Editar datos del producto</h2>
+				<h2 class="products-title">Editar producto</h2>
 			</div>
-			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá va el formulario para modificar datos de un producto del catálogo. <br>
-			Debe cumplir con los puntos de la consigna y ser coherente con la tabla de la base de datos. <br>
-			Eliminen estás líneas y coloquen el formulario. <br>
-			Recuerden todo lo que necesita tanto la etiqueta form como los campos input para operar correctamtente</i> <br>
-			////////////////
-			</h2>
+			<div class="col-12 col-md-8">
+				<form class="form" action="/products/edit/<%= producto.id %>" method="POST">
+					<label class="form-label" for="imagen">Imagen (nombre del archivo con su extensión, ej: cronos.jpg)</label>
+					<input class="form-input" type="text" name="imagen" id="imagen" value="<%= producto.imagen %>">
+
+					<label class="form-label" for="nombre">Nombre del producto</label>
+					<input class="form-input" type="text" name="nombre" id="nombre" value="<%= producto.nombre %>">
+
+					<label class="form-label" for="descripcion">Descripcion</label>
+					<textarea class="form-input" name="descripcion" id="descripcion"><%= producto.descripcion %></textarea>
+
+					<button class="buy-now-button" type="submit">Guardar cambios</button>
+				</form>
+			</div>
 
 
 	<!-- footer -->

@@ -29,15 +29,20 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<div class="col-12 col-md-8">
-				<form class="form" action="/" method="GET">
-					<label class="form-label" for="imagen">Imagen</label>
-					<input class="form-input" type="text" name="imagen" id="imagen" required>
+				<% if (typeof errors !== 'undefined') { %>
+					<% errors.forEach(function(e) { %>
+						<p class="error"><%= e.msg %></p>
+					<% }) %>
+				<% } %>
+				<form class="form" action="/products/add" method="POST">
+					<label class="form-label" for="imagen">Imagen (nombre del archivo con su extensión, ej: cronos.jpg)</label>
+					<input class="form-input" type="text" name="imagen" id="imagen">
 
 					<label class="form-label" for="nombre">Nombre del producto</label>
-					<input class="form-input" type="text" name="nombre" id="nombre" required>
+					<input class="form-input" type="text" name="nombre" id="nombre">
 
 					<label class="form-label" for="descripcion">Descripcion</label>
-					<textarea class="form-input" name="descripcion" id="descripcion" required></textarea>
+					<textarea class="form-input" name="descripcion" id="descripcion"></textarea>
 
 					<button class="buy-now-button" type="submit">Cargar producto</button>
 				</form>

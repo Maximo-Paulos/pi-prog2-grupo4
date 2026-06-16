@@ -8,9 +8,7 @@ const controller = {
             include: [{ association: "usuario" }, { association: "comentarios" }]
         })
         .then(function (productos) {
-            db.User.findByPk(1).then(function (usuario) {
-                res.render('index', { productos: productos, usuario: usuario });
-            });
+            res.render('index', { productos: productos });
         })
         .catch(function (error) {
             console.log(error);
@@ -19,22 +17,25 @@ const controller = {
     },
 
     productAdd: function (req, res) {
-        db.User.findByPk(1).then(function (usuario) {
-            res.render('product-add', { usuario: usuario });
-        });
+        if (!req.session.user) {
+            return res.redirect('/users/login');
+        }
+        return res.render('product-add');
     },
 
     guardarProducto: function (req, res) {
+        if (!req.session.user) {
+            return res.redirect('/users/login');
+        }
+
         const errors = validationResult(req);
 
         if (!errors.isEmpty()) {
-            return db.User.findByPk(1).then(function (usuario) {
-                res.render('product-add', { errors: errors.array(), usuario: usuario });
-            });
+            return res.render('product-add', { errors: errors.array() });
         }
 
         db.Product.create({
-            usuarioId: 1,
+            usuarioId: req.session.user.id,
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
             imagen: req.body.imagen
@@ -48,6 +49,68 @@ const controller = {
         });
     },
 
+    productEdit: function (req, res) {
+        if (!req.session.user) {
+            return res.redirect('/users/login');
+        }
+
+        db.Product.findByPk(req.params.id)
+        .then(function (producto) {
+            if (!producto) {
+                return res.send("Producto no encontrado");
+            }
+            if (producto.usuarioId != req.session.user.id) {
+                return res.redirect('/');
+            }
+            return res.render('product-edit', { producto: producto });
+        })
+        .catch(function (error) {
+            console.log(error);
+            res.send("Error al buscar el producto");
+        });
+    },
+
+    actualizarProducto: function (req, res) {
+        if (!req.session.user) {
+            return res.redirect('/users/login');
+        }
+
+        db.Product.findByPk(req.params.id)
+        .then(function (producto) {
+            if (!producto) {
+                return res.send("Producto no encontrado");
+            }
+            if (producto.usuarioId != req.session.user.id) {
+                return res.redirect('/');
+            }
+
+            const errors = validationResult(req);
+
+            if (!errors.isEmpty()) {
+                return res.send(errors.array());
+            }
+
+            db.Product.update({
+                nombre: req.body.nombre,
+                descripcion: req.body.descripcion,
+                imagen: req.body.imagen
+            }, {
+                where: { id: req.params.id }
+            })
+            .then(function () {
+                res.redirect('/products/product/' + req.params.id);
+            })
+            .catch(function (error) {
+                console.log(error);
+                res.send("Ocurrió un error al editar el producto");
+            });
+        })
+        .catch(function (error) {
+            console.log(error);
+            res.send("Error al buscar el producto");
+        });
+    },
+
     searchResults: function (req, res) {
         let busqueda = req.query.search;
 
@@ -58,12 +121,9 @@ const controller = {
             include: [{ association: "usuario" }, { association: "comentarios" }]
         })
         .then(function (productos) {
-            db.User.findByPk(1).then(function (usuario) {
-                res.render('search-results', {
-                    productos: productos,
-                    busqueda: busqueda,
-                    usuario: usuario
-                });
+            res.render('search-results', {
+                productos: productos,
+                busqueda: busqueda
             });
         })
         .catch(function (error) {
@@ -85,9 +145,7 @@ const controller = {
             if (!producto) {
                 return res.send("Producto no encontrado");
             }
-            db.User.findByPk(1).then(function (usuario) {
-                res.render('product', { producto: producto, usuario: usuario });
-            });
+            res.render('product', { producto: producto });
         })
         .catch(function (error) {
             console.log(error);

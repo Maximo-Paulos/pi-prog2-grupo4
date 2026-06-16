@@ -17,6 +17,8 @@ router.get('/', productController.productos);
 router.get('/add', productController.productAdd);
 router.post('/add', validaciones, productController.guardarProducto);
 router.get('/search', productController.searchResults);
+router.get('/edit/:id', productController.productEdit);
+router.post('/edit/:id', validaciones, productController.actualizarProducto);
 router.get('/product/:id', productController.detalle);
 
 
