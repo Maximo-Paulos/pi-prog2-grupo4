@@ -56,30 +56,21 @@ const userController = {
     data: function (req, res) {
         const errors = validationResult(req);
 
-        // si hay errores de validacon los devuelvo a la vista
+        // si hay errores de validacion los mando con res.send como pide la consigna
         if (!errors.isEmpty()) {
-            return res.render('register', { errors: errors.array() });
+            return res.send(errors.array());
         }
 
-        console.log("Registrando usuario:", req.body.email);
+        // encripto la contrasena antes de  guardarla
+        let passEncriptada = bcrypt.hashSync(req.body.contrasenia, 10);
 
-        db.User.findOne({ where: { email: req.body.email } })
-        .then(function (usuarioExistente) {
-            if (usuarioExistente) {
-                return res.render('register', { errors: [{ msg: 'Ese email ya está registrado' }] });
-            }
-
-            // encripto la contrasena antes de  guardarla
-            let passEncriptada = bcrypt.hashSync(req.body.contrasenia, 10);
-
-            db.User.create({
-                email: req.body.email,
-                nombre: req.body.nombre,
-                contrasenia: passEncriptada
-            })
-            .then(function () {
-                return res.redirect('/users/login');
-            });
+        db.User.create({
+            email: req.body.email,
+            nombre: req.body.nombre,
+            contrasenia: passEncriptada
+        })
+        .then(function () {
+            return res.redirect('/users/login');
         })
         .catch(function (error) {
             console.log(error);
@@ -92,7 +83,6 @@ const userController = {
             return res.redirect('/users');
         }
         // si guardo el recordarme le precargo el email desde la cookie
-        console.log("email recordado:", req.cookies.userEmail);
         return res.render('login', { email: req.cookies.userEmail });
     },
 
