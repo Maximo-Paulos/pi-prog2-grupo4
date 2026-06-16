@@ -143,6 +143,24 @@ const controller = {
         });
     },
 
+    guardarComentario: function (req, res) {
+        if (!req.session.user) {
+            return res.redirect('/users/login');
+        }
+        db.Comentario.create({
+            productoId: req.params.id,
+            usuarioId: req.session.user.id,
+            texto: req.body.texto
+        })
+        .then(function () {
+            res.redirect('/products/product/' + req.params.id);
+        })
+        .catch(function (error) {
+            console.log(error);
+            res.send("Error al guardar el comentario");
+        });
+    },
+
     searchResults: function (req, res) {
         let busqueda = req.query.search;
 
