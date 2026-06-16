@@ -51,7 +51,7 @@ const userController = {
         const errors = validationResult(req);
 
         if (!errors.isEmpty()) {
-            return res.send(errors.array());
+            return res.render('register', { errors: errors.array() });
         }
 
         db.User.findOne({ where: { email: req.body.email } })
