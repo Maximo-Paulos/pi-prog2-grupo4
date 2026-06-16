@@ -111,6 +111,38 @@ const controller = {
         });
     },
 
+    eliminarProducto: function (req, res) {
+        if (!req.session.user) {
+            return res.redirect('/users/login');
+        }
+
+        db.Product.findByPk(req.params.id)
+        .then(function (producto) {
+            if (!producto) {
+                return res.send("Producto no encontrado");
+            }
+            if (producto.usuarioId != req.session.user.id) {
+                return res.redirect('/');
+            }
+
+            db.Comentario.destroy({ where: { productoId: req.params.id } })
+            .then(function () {
+                return db.Product.destroy({ where: { id: req.params.id } });
+            })
+            .then(function () {
+                res.redirect('/');
+            })
+            .catch(function (error) {
+                console.log(error);
+                res.send("Ocurrió un error al eliminar el producto");
+            });
+        })
+        .catch(function (error) {
+            console.log(error);
+            res.send("Error al buscar el producto");
+        });
+    },
+
     searchResults: function (req, res) {
         let busqueda = req.query.search;
 
