@@ -513,7 +513,9 @@ textarea.form-input {
 .footer-data {
   text-align: center;
 }
-
+.edit-boton {
+  alignen-items: center;
+}
 .footer-data i {
   color: #1e88e5;
   font-size: 3.5em;
@@ -600,3 +602,4 @@ textarea.form-input {
     height: 250px;
   }
 }
+

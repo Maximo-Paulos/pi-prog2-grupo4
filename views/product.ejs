@@ -21,10 +21,10 @@
 	<%- include("./partials/header.ejs") %>
 	<!-- product detail -->
 	<div class="container products-wrapper">
-		<div class="d-flex align-items-center">
+		<div class="d-flex align-items-center" class="edit-boton">
 			<h2 class="products-title"><%= producto.nombre %></h2>
 			<% if (locals.user && producto.usuario && locals.user.id == producto.usuario.id) { %>
-			<p class="product-detail-description">
+			<p class="buy-now-button">
 				<a href="/products/edit/<%= producto.id %>">Editar</a>
 			</p>
 			<% } %>
