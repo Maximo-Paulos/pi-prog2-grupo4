@@ -15,7 +15,7 @@ const validaciones = [
             return db.User.findOne({ where: { email: value } })
                 .then(function (usuario) {
                     if (usuario) {
-                        return Promise.reject('Ese email ya está registrado');
+                        throw new Error('Ese email ya está registrado');
                     }
                 });
         }),
